@@ -28,18 +28,21 @@ var seatacAirport = {
   minCust: 3,
   maxCust: 24,
   avgSale: 1.2,
+  hoursOfOperations: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
+  salesPerHour: [],
+  salesTotal: 0,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (seatacAirport.maxCust - seatacAirport.minCust)) + seatacAirport.minCust;
-  },
-};
+    var min = this.minCust;
+    var max = this.maxCust;
 
-//third store
-var seattleCenter = {
-  minCust: 11,
-  maxCust: 38,
-  avgSale: 3.7,
-  hourlyCustomers: function() {
-    return Math.floor(Math.random() * (seattleCenter.maxCust - seattleCenter.minCust)) + seattleCenter.minCust;
+    var salesAmmount = [];
+    for (var i = 0; i < this.hoursOfOperations.length; i++) {
+      var randomSales = Math.floor(Math.random() * (max - min) + min);
+
+      salesAmmount.push(Math.ceil(randomSales * this.avgSale));
+    }
+    this.salesPerHour = salesAmmount;
+    return;
   },
 };
 
@@ -48,17 +51,20 @@ var capitolHill = {
   minCust: 20,
   maxCust: 38,
   avgSale: 2.3,
+  hoursOfOperations: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
+  salesPerHour: [],
+  salesTotal: 0,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (capitolHill.maxCust - capitolHill.minCust)) + capitolHill.minCust;
-  },
-};
+    var min = this.minCust;
+    var max = this.maxCust;
 
-//fifth store
-var alki = {
-  minCust: 2,
-  maxCust: 16,
-  avgSale: 4.6,
-  hourlyCustomers: function() {
-    return Math.floor(Math.random() * (alki.maxCust - alki.minCust)) + alki.minCust;
+    var salesAmmount = [];
+    for (var i = 0; i < this.hoursOfOperations.length; i++) {
+      var randomSales = Math.floor(Math.random() * (max - min) + min);
+
+      salesAmmount.push(Math.ceil(randomSales * this.avgSale));
+    }
+    this.salesPerHour = salesAmmount;
+    return;
   },
 };
