@@ -5,8 +5,21 @@ var firstAndPike = {
   minCust: 23,
   maxCust: 65,
   avgSale: 6.3,
+  hoursOfOperations: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
+  salesPerHour: [],
+  salesTotal: 0,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (firstAndPike.maxCust - firstAndPike.minCust + 1)) + firstAndPike.minCust;
+    var min = this.minCust;
+    var max = this.maxCust;
+
+    var salesAmmount = [];
+    for (var i = 0; i < this.hoursOfOperations.length; i++) {
+      var randomSales = Math.floor(Math.random() * (max - min) + min);
+
+      salesAmmount.push(Math.ceil(randomSales * this.avgSale));
+    }
+    this.salesPerHour = salesAmmount;
+    return;
   },
 };
 
@@ -16,7 +29,7 @@ var seatacAirport = {
   maxCust: 24,
   avgSale: 1.2,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (seatacAirport.maxCust - seatacAirport.minCust + 1)) + seatacAirport.minCust;
+    return Math.floor(Math.random() * (seatacAirport.maxCust - seatacAirport.minCust)) + seatacAirport.minCust;
   },
 };
 
@@ -26,7 +39,7 @@ var seattleCenter = {
   maxCust: 38,
   avgSale: 3.7,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (seattleCenter.maxCust - seattleCenter.minCust + 1)) + seattleCenter.minCust;
+    return Math.floor(Math.random() * (seattleCenter.maxCust - seattleCenter.minCust)) + seattleCenter.minCust;
   },
 };
 
@@ -36,7 +49,7 @@ var capitolHill = {
   maxCust: 38,
   avgSale: 2.3,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (capitolHill.maxCust - capitolHill.minCust + 1)) + capitolHill.minCust;
+    return Math.floor(Math.random() * (capitolHill.maxCust - capitolHill.minCust)) + capitolHill.minCust;
   },
 };
 
@@ -46,6 +59,6 @@ var alki = {
   maxCust: 16,
   avgSale: 4.6,
   hourlyCustomers: function() {
-    return Math.floor(Math.random() * (alki.maxCust - alki.minCust + 1)) + alki.minCust;
+    return Math.floor(Math.random() * (alki.maxCust - alki.minCust)) + alki.minCust;
   },
 };
