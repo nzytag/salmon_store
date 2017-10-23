@@ -104,7 +104,6 @@ var alki = {
   hourlyCustomers: function() {
     var min = this.minCust;
     var max = this.maxCust;
-
     var salesAmmount = [];
     for (var i = 0; i < this.hoursOfOperations.length; i++) {
       var randomSales = Math.floor(Math.random() * (max - min) + min);
