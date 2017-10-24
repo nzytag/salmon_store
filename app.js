@@ -57,7 +57,6 @@ var seattleCenter = {
   hourlyCustomers: function() {
     var min = this.minCust;
     var max = this.maxCust;
-
     var salesAmmount = [];
     for (var i = 0; i < this.hoursOfOperations.length; i++) {
       var randomSales = Math.floor(Math.random() * (max - min) + min);
@@ -113,4 +112,21 @@ var alki = {
     this.salesPerHour = salesAmmount;
     return;
   },
+};
+
+var buildSales = function(salesArray) {
+  for (var i = 0; i < salesArray.length; + i++) {
+    var salesAmmount = [];
+    var salesTotal;
+    salesArray[i].hourlyCustomers();
+    var storeSales = document.createElement('ul');
+    for (var j = 0; j < salesArray[i].hoursOfOperations.length; j++) {
+      salesAmmount.push('<li>' + salesArray[i].hoursOfOperations[j] + ': ' +
+    salesArray[i].salesPerHour[j] + '</li>');
+    }
+    salesAmmountTotal = '<li>Total: ' + salesArray[i].salesTotal + '</li>';
+    salesAmmount.push(salesAmmountTotal);
+    storeSales.innerHTML = salesAmmount.join() + salesAmmountTotal;
+    main.appendChild(StoreSales);
+  }
 };
