@@ -30,7 +30,7 @@ var firstAndPike = {
 };
 
 var seaTacAirport = {
-  location: 'seaTac Airport',
+  location: 'SeaTac Airport',
   minSale: 3,
   maxSale: 24,
   avgcookiesPerSale: 1.2,
@@ -114,7 +114,7 @@ var capitolHill = {
 };
 
 var alki = {
-  location: 'Capitol Hill',
+  location: 'Alki',
   minSale: 11,
   maxSale: 38,
   avgcookiesPerSale: 3.7,
