@@ -1,15 +1,17 @@
 'use strict';
 
 //store #
+
+
+var timeArray = ['6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+
 var firstAndPike = {
   location: 'First and Pike',
   minSale: 23,
   maxSale: 65,
   avgcookiesPerSale: 6.3,
   totalcookies: 0,
-  time: [
-    '6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'
-  ],
+  time: timeArray,
   randomCustomer: function() { //this generates a random number of customers
     var min = this.minSale;
     var max = this.maxSale;
@@ -34,9 +36,7 @@ var seaTacAirport = {
   maxSale: 24,
   avgcookiesPerSale: 1.2,
   totalcookies: 0,
-  time: [
-    '6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'
-  ],
+  time: timeArray,
   randomCustomer: function() { //this generates a random number of customers
     var min = this.minSale;
     var max = this.maxSale;
@@ -62,9 +62,7 @@ var seattleCenter = {
   maxSale: 38,
   avgcookiesPerSale: 3.7,
   totalcookies: 0,
-  time: [
-    '6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'
-  ],
+  time: timeArray,
   randomCustomer: function() { //this generates a random number of customers
     var min = this.minSale;
     var max = this.maxSale;
@@ -90,9 +88,7 @@ var capitolHill = {
   maxSale: 38,
   avgcookiesPerSale: 3.7,
   totalcookies: 0,
-  time: [
-    '6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'
-  ],
+  time: timeArray,
   randomCustomer: function() { //this generates a random number of customers
     var min = this.minSale;
     var max = this.maxSale;
@@ -118,9 +114,7 @@ var alki = {
   maxSale: 38,
   avgcookiesPerSale: 3.7,
   totalcookies: 0,
-  time: [
-    '6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'
-  ],
+  time: timeArray,
   randomCustomer: function() { //this generates a random number of customers
     var min = this.minSale;
     var max = this.maxSale;

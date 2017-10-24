@@ -1,1 +1,77 @@
 /* this will be the styling*/
+body {
+  font-family: helvetica;
+  background-color: #F3BB82;
+}
+
+header {
+  /* width: 100%; */
+  background: #DC7A17;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+header section {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header section img {
+  margin-top: 12px;
+  float: left;
+  margin-right: 20px;
+  width: 130px;
+  height: auto;
+}
+
+header section li {
+  color: #fff;
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 80px;
+  font-size: 20px;
+}
+main {
+  width: 960px;
+  margin: 30px auto;
+}
+
+.sub-banners li {
+  float: left;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+.sub-banners li:last-child {
+  margin-right: 0;
+}
+
+.featured-section {
+  clear: both;
+}
+
+.featured-section img {
+  float: left;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+.featured-section div h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+featured-section div p {
+  line-height: 50px;
+  height: 300px;
+  overflow: auto;
+}
+button {
+  border: none;
+  padding: 8px 12px;
+  color: white
+
+}
+footer {
+  height: 150px;
+  margin-bottom: 30px;
+  clear: both;
+}
