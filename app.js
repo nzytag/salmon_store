@@ -23,6 +23,7 @@ var firstAndPike = {
   },
 };
 
+
 //second store
 var seatacAirport = {
   minCust: 3,
