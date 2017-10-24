@@ -137,7 +137,7 @@ var alki = {
 var shops = [firstAndPike,seaTacAirport,seattleCenter,capitolHill,alki]; //creating a array of all the stores from above
 for (var j = 0; j < shops.length; j++) {
   //creating a for loop to add <p> and <ul> and <l> to each page. we use the var shop from above to title it
-  var pEl = document.createElement('p'); //creating in in the cloud/memory
+  var pEl = document.createElement('h1'); //creating in in the cloud/memory added h1 tag to make it bigger
   pEl.innerHTML = shops[j].location; //giving pEl content in memory/cloud from line 143.
   document.body.appendChild(pEl); //we put the pEl on the HTML page itself
   var el = document.createElement('ul'); //create a <ul> tage in the cloud/memory.
@@ -147,7 +147,7 @@ for (var j = 0; j < shops.length; j++) {
     var lineItem = '<li>' + shopData[i].join(': ') + ' cookies</li>'; // we created a var for the string for readablity which we use on the next line and we create our <li> here
     shopLi = shopLi + lineItem; // we define shopLi
   };
-  var totalLi = '<li>Total:' + shops[j].totalcookies + ' cookies</li>';// we created a var for the string for readablity
+  var totalLi = '<h4>Total: ' + shops[j].totalcookies + ' cookies</h4>';// we created a var for the string for readablity and added h4 to make it more readable
   el.innerHTML = shopLi + totalLi; // adding it to the bottom of the shopLi <li>
   document.body.appendChild(el); // add this to the HTML.
 };
