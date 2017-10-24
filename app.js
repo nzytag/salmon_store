@@ -151,7 +151,7 @@ for (var j = 0; j < shops.length; j++) {
   var shopData = shops[j].cookiesSoldPerHour(); //getting a method of a item from the array[j]
   var shopLi = ''; //creating a long list of <li> which we fill will line 152
   for( var i = 0; i < shopData.length; i++) { //for loop that makes a <li> and adds line 153 and joins it together with strings to make a sentence.
-    var lineItem = '<li>' + shopData[i].join(': ') + ' cookeies</li>'; // we created a var for the string for readablity which we use on the next line and we create our <li> here
+    var lineItem = '<li>' + shopData[i].join(': ') + ' cookies</li>'; // we created a var for the string for readablity which we use on the next line and we create our <li> here
     shopLi = shopLi + lineItem; // we define shopLi
   };
   var totalLi = '<li>Total:' + shops[j].totalcookies + ' cookies</li>';// we created a var for the string for readablity
