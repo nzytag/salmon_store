@@ -1,153 +1,68 @@
 'use strict';
 
-//store #
+var timeArray = ['store name', ' 6am ', ' 7am ', ' 8am ',' 9am ', ' 10am ', ' 11am ', ' 12pm ', ' 1pm ', ' 2pm ', ' 3pm ', ' 4pm ', ' 5pm ', ' 6pm ', ' 7pm ', ' 8pm '];
 
 
-var timeArray = ['6am', '7am', '8am','9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var firstAndPike = {
-  location: 'First and Pike',
-  minSale: 23,
-  maxSale: 65,
-  avgcookiesPerSale: 6.3,
-  totalcookies: 0,
-  time: timeArray,
-  randomCustomer: function() { //this generates a random number of customers
-    var min = this.minSale;
-    var max = this.maxSale;
-    return Math.floor(Math.random() * (max - min) + min); //this code creates the number
-  },
-  cookiesSoldPerHour: function() { // makes totoal cookeies sold per hour
-    var hoursAndcookies = []; //array that is gets filled by the hoursAndcookies.push
-    var totalcookies = 0; //the starting at 0 and gets added by each sale to create total hour
-    for (var i = 0; i < this.time.length; i++) {
-      var cookiesPerHour =  Math.floor(this.randomCustomer() * this.avgcookiesPerSale); // use to shorten code
-      hoursAndcookies.push([this.time[i],cookiesPerHour]); //use to push hoursAndcookies to the empty array
-      totalcookies = totalcookies + cookiesPerHour; //this defines the var totalcookies in this function.
-    }
-    this.totalcookies = totalcookies; // this defines the object totalcookies
-    return hoursAndcookies;
-  }
-};
+function Stores(name, minSale, maxSale, timeArray) {
+  this.name = name;
+  this.minSale = minSale;
+  this.maxSale = maxSale;
+  this.timeArray = timeArray;
+  this.cookieArray = [];
+}
 
-var seaTacAirport = {
-  location: 'SeaTac Airport',
-  minSale: 3,
-  maxSale: 24,
-  avgcookiesPerSale: 1.2,
-  totalcookies: 0,
-  time: timeArray,
-  randomCustomer: function() { //this generates a random number of customers
-    var min = this.minSale;
-    var max = this.maxSale;
-    return Math.floor(Math.random() * (max - min) + min);
-  },
-  cookiesSoldPerHour: function() { // makes totoal cookeies sold per hour
-    var hoursAndcookies = [];
-    var totalcookies = 0;
-    for (var i = 0; i < this.time.length; i++) {
-    //console.log(this.randomCustomer() * Math.floor(this.avgcookiesPerSale));
-      var cookiesPerHour =  Math.floor(this.randomCustomer() * this.avgcookiesPerSale);
-      hoursAndcookies.push([this.time[i],cookiesPerHour]);
-      totalcookies = totalcookies + cookiesPerHour;
-    }
-    this.totalcookies = totalcookies;
-    return hoursAndcookies;
-  }
-};
+var store = [];
+var firstAndPike = new Stores('first and pike', 23, 65, 6.3);
+var seatacAirport = new Stores('seatac airport', 3, 24, 1.2);
+var seattleCenter = new Stores('seattle Center', 11, 38, 3.7);
+var capitolHill = new Stores('capitol hill', 20, 38, 2.3);
+var alki = new Stores('alki', 2, 16, 4.6);
 
-var seattleCenter = {
-  location: 'Seattle Center',
-  minSale: 11,
-  maxSale: 38,
-  avgcookiesPerSale: 3.7,
-  totalcookies: 0,
-  time: timeArray,
-  randomCustomer: function() { //this generates a random number of customers
-    var min = this.minSale;
-    var max = this.maxSale;
-    return Math.floor(Math.random() * (max - min) + min);
-  },
-  cookiesSoldPerHour: function() { // makes totoal cookeies sold per hour
-    var hoursAndcookies = [];
-    var totalcookies = 0;
-    for (var i = 0; i < this.time.length; i++) {
-    //console.log(this.randomCustomer() * Math.floor(this.avgcookiesPerSale));
-      var cookiesPerHour =  Math.floor(this.randomCustomer() * this.avgcookiesPerSale);
-      hoursAndcookies.push([this.time[i],cookiesPerHour]);
-      totalcookies = totalcookies + cookiesPerHour;
-    }
-    this.totalcookies = totalcookies;
-    return hoursAndcookies;
-  }
-};
 
-var capitolHill = {
-  location: 'Capitol Hill',
-  minSale: 11,
-  maxSale: 38,
-  avgcookiesPerSale: 3.7,
-  totalcookies: 0,
-  time: timeArray,
-  randomCustomer: function() { //this generates a random number of customers
-    var min = this.minSale;
-    var max = this.maxSale;
-    return Math.floor(Math.random() * (max - min) + min);
-  },
-  cookiesSoldPerHour: function() { // makes totoal cookeies sold per hour
-    var hoursAndcookies = [];
-    var totalcookies = 0;
-    for (var i = 0; i < this.time.length; i++) {
-    //console.log(this.randomCustomer() * Math.floor(this.avgcookiesPerSale));
-      var cookiesPerHour =  Math.floor(this.randomCustomer() * this.avgcookiesPerSale);
-      hoursAndcookies.push([this.time[i],cookiesPerHour]);
-      totalcookies = totalcookies + cookiesPerHour;
-    }
-    this.totalcookies = totalcookies;
-    return hoursAndcookies;
-  }
-};
+store.push(firstAndPike);
+store.push(seatacAirport);
+store.push(seattleCenter);
+store.push(capitolHill);
+store.push(alki);
 
-var alki = {
-  location: 'Alki',
-  minSale: 11,
-  maxSale: 38,
-  avgcookiesPerSale: 3.7,
-  totalcookies: 0,
-  time: timeArray,
-  randomCustomer: function() { //this generates a random number of customers
-    var min = this.minSale;
-    var max = this.maxSale;
-    return Math.floor(Math.random() * (max - min) + min);
-  },
-  cookiesSoldPerHour: function() { // makes totoal cookeies sold per hour
-    var hoursAndcookies = [];
-    var totalcookies = 0;
-    for (var i = 0; i < this.time.length; i++) {
-    //console.log(this.randomCustomer() * Math.floor(this.avgcookiesPerSale));
-      var cookiesPerHour =  Math.floor(this.randomCustomer() * this.avgcookiesPerSale);
-      hoursAndcookies.push([this.time[i],cookiesPerHour]);
-      totalcookies = totalcookies + cookiesPerHour;
-    }
-    this.totalcookies = totalcookies;
-    return hoursAndcookies;
-  }
-};
+var table = document.getElementById('table_content');
 
-var shops = [firstAndPike,seaTacAirport,seattleCenter,capitolHill,alki]; //creating a array of all the stores from above
-for (var j = 0; j < shops.length; j++) {
-  //creating a for loop to add <p> and <ul> and <l> to each page. we use the var shop from above to title it
-  var pEl = document.createElement('h1'); //creating in in the cloud/memory added h1 tag to make it bigger
-  pEl.innerHTML = shops[j].location; //giving pEl content in memory/cloud from line 143.
-  document.body.appendChild(pEl); //we put the pEl on the HTML page itself
-  var el = document.createElement('ul'); //create a <ul> tage in the cloud/memory.
-  var shopData = shops[j].cookiesSoldPerHour(); //getting a method of a item from the array[j]
-  var shopLi = ''; //creating a long list of <li> which we fill will line 152
-  for( var i = 0; i < shopData.length; i++) { //for loop that makes a <li> and adds line 153 and joins it together with strings to make a sentence.
-    var lineItem = '<li>' + shopData[i].join(': ') + ' cookies</li>'; // we created a var for the string for readablity which we use on the next line and we create our <li> here
-    shopLi = shopLi + lineItem; // we define shopLi
+var tr = document.createElement('tr');
+var td = '';
+
+
+for (var i = 0; i < timeArray.length; i++) {
+  td = td + '<td>' + timeArray[i] + '</td>';
+}
+
+tr.innerHTML = td;
+table.appendChild(tr);
+
+var newRow;
+
+for (var j = 0; j < store.length; j++) {
+  newRow = document.createElement('tr');
+  newRow.innerHTML = store[j].name;
+  table.appendChild(newRow);
+}
+
+var shops = [firstAndPike, seatacAirport, seattleCenter, capitolHill, alki]; //creating a array of all the stores from above
+for (var k = 0; k < shops.length; k++) {
+
+  var pEl = document.createElement('h1');
+  pEl.innerHTML = shops[k].name;
+  document.body.appendChild(pEl);
+
+  var el = document.createElement('ul');
+  var shopData = (shops[k])();
+  console.log(shopData);
+  var shopLi = '';
+  for( var l = 0; l < shopData.length; l++) {
+    var lineItem = '<li>' + shopData[l].join(' : ') + ' cookies</li>';
+    shopLi = shopLi + lineItem;
   };
-  var totalLi = '<h4>Total: ' + shops[j].totalcookies + ' cookies</h4>';// we created a var for the string for readablity and added h4 to make it more readable
-  el.innerHTML = shopLi + totalLi; // adding it to the bottom of the shopLi <li>
-  document.body.appendChild(el); // add this to the HTML.
+  var totalLi = '<h4>Total: ' + shops[k].totalcookies + ' cookies</h4>';
+  el.innerHTML = shopLi + totalLi;
+  document.body.appendChild(el);
 };
