@@ -1,16 +1,26 @@
 'use strict';
 
-var timeArray = ['store name', ' 6am ', ' 7am ', ' 8am ',' 9am ', ' 10am ', ' 11am ', ' 12pm ', ' 1pm ', ' 2pm ', ' 3pm ', ' 4pm ', ' 5pm ', ' 6pm ', ' 7pm ', ' 8pm '];
+var timeArray = [' 6am ', ' 7am ', ' 8am ',' 9am ', ' 10am ', ' 11am ', ' 12pm ', ' 1pm ', ' 2pm ', ' 3pm ', ' 4pm ', ' 5pm ', ' 6pm ', ' 7pm ', ' 8pm '];
 
 
 
-function Stores(name, minSale, maxSale, timeArray) {
+function Stores(name, minSale, maxSale, avgCookiesPerSale) {
   this.name = name;
   this.minSale = minSale;
   this.maxSale = maxSale;
-  this.timeArray = timeArray;
-  this.cookieArray = [];
+  this.cookies = [];
+  this.avgCookiesPerSale = avgCookiesPerSale;
 }
+
+Stores.prototype.cookiesSoldPerHour = function() {
+  var min = this.minSale;
+  var max = this.maxSale;
+  for (var i = 0; i < timeArray.length; i++) {
+    var randomCustomer = Math.floor(Math.random() * (max - min) + min);
+    var totalCookies = Math.floor(randomCustomer * this.avgCookiesPerSale);
+    this.cookies.push(totalCookies);
+  }
+};
 
 var store = [];
 var firstAndPike = new Stores('first and pike', 23, 65, 6.3);
@@ -26,11 +36,16 @@ store.push(seattleCenter);
 store.push(capitolHill);
 store.push(alki);
 
+firstAndPike.cookiesSoldPerHour();
+seatacAirport.cookiesSoldPerHour();
+seattleCenter.cookiesSoldPerHour();
+capitolHill.cookiesSoldPerHour();
+alki.cookiesSoldPerHour();
+
 var table = document.getElementById('table_content');
 
 var tr = document.createElement('tr');
-var td = '';
-
+var td = '<td></td>';
 
 for (var i = 0; i < timeArray.length; i++) {
   td = td + '<td>' + timeArray[i] + '</td>';
@@ -45,24 +60,29 @@ for (var j = 0; j < store.length; j++) {
   newRow = document.createElement('tr');
   newRow.innerHTML = store[j].name;
   table.appendChild(newRow);
+  var shopData = (store[j]);
+  for (var k = 0; k < timeArray.length; k++) {
+    var tableData = document.createElement('td');
+    tableData.innerHTML = shopData.cookies[k];
+    newRow.appendChild(tableData);
+  }
 }
 
-var shops = [firstAndPike, seatacAirport, seattleCenter, capitolHill, alki]; //creating a array of all the stores from above
-for (var k = 0; k < shops.length; k++) {
 
-  var pEl = document.createElement('h1');
-  pEl.innerHTML = shops[k].name;
-  document.body.appendChild(pEl);
 
-  var el = document.createElement('ul');
-  var shopData = (shops[k])();
-  console.log(shopData);
-  var shopLi = '';
-  for( var l = 0; l < shopData.length; l++) {
-    var lineItem = '<li>' + shopData[l].join(' : ') + ' cookies</li>';
-    shopLi = shopLi + lineItem;
-  };
-  var totalLi = '<h4>Total: ' + shops[k].totalcookies + ' cookies</h4>';
-  el.innerHTML = shopLi + totalLi;
-  document.body.appendChild(el);
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//null
