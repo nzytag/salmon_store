@@ -75,3 +75,50 @@ footer {
   margin-bottom: 30px;
   clear: both;
 }
+
+/*app styles*/
+body {
+  font-family: helvetica;
+}
+fieldset {
+  padding: 10px;
+}
+
+input[type="text"] {
+  padding: 7px;
+  border: solid 1px #000;
+  border-radius: 3px;
+}
+
+input[type="text"]:focus {
+  background: #000;
+  color: #fff;
+}
+
+button {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: #000;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 3px;
+  border: none;
+}
+
+table {
+  margin-left: 20px;
+}
+
+thead {
+  background: #888;
+}
+
+td, th {
+  padding: 20px;
+  border: solid 1px;
+
+}
+td:first-child {
+  padding: 20px;
+  border: solid 1px;
+}

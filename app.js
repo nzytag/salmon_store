@@ -30,11 +30,13 @@ var capitolHill = new Stores('capitol hill', 20, 38, 2.3);
 var alki = new Stores('alki', 2, 16, 4.6);
 
 
+
 store.push(firstAndPike);
 store.push(seatacAirport);
 store.push(seattleCenter);
 store.push(capitolHill);
 store.push(alki);
+
 
 firstAndPike.cookiesSoldPerHour();
 seatacAirport.cookiesSoldPerHour();
@@ -42,36 +44,63 @@ seattleCenter.cookiesSoldPerHour();
 capitolHill.cookiesSoldPerHour();
 alki.cookiesSoldPerHour();
 
-var table = document.getElementById('table_content');
 
-var tr = document.createElement('tr');
-var td = '<td></td>';
 
-for (var i = 0; i < timeArray.length; i++) {
-  td = td + '<td>' + timeArray[i] + '</td>';
-}
+var newStores = function(store) {
 
-tr.innerHTML = td;
-table.appendChild(tr);
+  var table = document.getElementById('table_content');
+  table.innerHTML = ""
+  var tr = document.createElement('tr');
+  var td = '<td></td>';
 
-var newRow;
-
-for (var j = 0; j < store.length; j++) {
-  newRow = document.createElement('tr');
-  newRow.innerHTML = store[j].name;
-  table.appendChild(newRow);
-  var shopData = (store[j]);
-  for (var k = 0; k < timeArray.length; k++) {
-    var tableData = document.createElement('td');
-    tableData.innerHTML = shopData.cookies[k];
-    newRow.appendChild(tableData);
+  for (var i = 0; i < timeArray.length; i++) {
+    td = td + '<td>' + timeArray[i] + '</td>';
   }
+
+  tr.innerHTML = td;
+  table.appendChild(tr);
+
+  var newRow;
+
+  for (var j = 0; j < store.length; j++) {
+    newRow = document.createElement('tr');
+    newRow.innerHTML = store[j].name;
+    table.appendChild(newRow);
+    var shopData = (store[j]);
+    for (var k = 0; k < timeArray.length; k++) {
+      var tableData = document.createElement('td');
+      tableData.innerHTML = shopData.cookies[k];
+      newRow.appendChild(tableData);
+    }
+  }
+};
+
+newStores(store);
+var form = document.getElementById('store_form');
+function formData(event){
+  event.preventDefault();
+  var storeName = event.target.store_name.value;
+  var minimumCustomers = parseInt(event.target.minimum_customers.value);
+  console.log(isNaN(minimumCustomers));
+  var maximumCustomers = parseInt(event.target.maximum_customers.value);
+  console.log(isNaN(maximumCustomers));
+  var avgSales = parseInt(event.target.avg_sales.value);
+  console.log(isNaN(avgSales));
+
+  if ( isNaN(minimumCustomers) === true || isNaN(maximumCustomers) === true || isNaN(avgSales) === true){
+    alert('please insert a number');
+    return;
+  }
+  var formStore = new Stores(storeName, minimumCustomers, maximumCustomers, avgSales);
+  console.log(store);
+  store.push(formStore);
+  formStore.cookiesSoldPerHour();
+
+  newStores(store);
+  form.reset();
 }
 
-
-
-
-
+form.addEventListener('submit', formData);
 
 
 
