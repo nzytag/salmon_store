@@ -3,7 +3,6 @@
 var timeArray = [' 6am ', ' 7am ', ' 8am ',' 9am ', ' 10am ', ' 11am ', ' 12pm ', ' 1pm ', ' 2pm ', ' 3pm ', ' 4pm ', ' 5pm ', ' 6pm ', ' 7pm ', ' 8pm '];
 
 
-
 function Stores(name, minSale, maxSale, avgCookiesPerSale) {
   this.name = name;
   this.minSale = minSale;
@@ -49,7 +48,7 @@ alki.cookiesSoldPerHour();
 var newStores = function(store) {
 
   var table = document.getElementById('table_content');
-  table.innerHTML = ""
+  table.innerHTML = '';
   var tr = document.createElement('tr');
   var td = '<td></td>';
 
@@ -61,7 +60,7 @@ var newStores = function(store) {
   table.appendChild(tr);
 
   var newRow;
-
+  
   for (var j = 0; j < store.length; j++) {
     newRow = document.createElement('tr');
     newRow.innerHTML = store[j].name;
@@ -74,7 +73,7 @@ var newStores = function(store) {
     }
   }
 };
-
+//here we will make an event from the form and pay attention to what they input
 newStores(store);
 var form = document.getElementById('store_form');
 function formData(event){
@@ -87,7 +86,7 @@ function formData(event){
   var avgSales = parseInt(event.target.avg_sales.value);
   console.log(isNaN(avgSales));
 
-  if ( isNaN(minimumCustomers) === true || isNaN(maximumCustomers) === true || isNaN(avgSales) === true){
+  if ( isNaN(minimumCustomers) === true || isNaN(maximumCustomers) === true || isNaN(avgSales) === true){ //this one will make sure it is a number or give an alert asking for one
     alert('please insert a number');
     return;
   }
@@ -99,7 +98,7 @@ function formData(event){
   newStores(store);
   form.reset();
 }
-
+//this is "listening to the submit button"
 form.addEventListener('submit', formData);
 
 
