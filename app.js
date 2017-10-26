@@ -2,7 +2,7 @@
 
 var timeArray = [' 6am ', ' 7am ', ' 8am ',' 9am ', ' 10am ', ' 11am ', ' 12pm ', ' 1pm ', ' 2pm ', ' 3pm ', ' 4pm ', ' 5pm ', ' 6pm ', ' 7pm ', ' 8pm '];
 
-
+//object constructor
 function Stores(name, minSale, maxSale, avgCookiesPerSale) {
   this.name = name;
   this.minSale = minSale;
@@ -11,6 +11,7 @@ function Stores(name, minSale, maxSale, avgCookiesPerSale) {
   this.avgCookiesPerSale = avgCookiesPerSale;
 }
 
+//
 Stores.prototype.cookiesSoldPerHour = function() {
   var min = this.minSale;
   var max = this.maxSale;
@@ -43,8 +44,6 @@ seattleCenter.cookiesSoldPerHour();
 capitolHill.cookiesSoldPerHour();
 alki.cookiesSoldPerHour();
 
-
-
 var newStores = function(store) {
 
   var table = document.getElementById('table_content');
@@ -60,7 +59,7 @@ var newStores = function(store) {
   table.appendChild(tr);
 
   var newRow;
-  
+
   for (var j = 0; j < store.length; j++) {
     newRow = document.createElement('tr');
     newRow.innerHTML = store[j].name;
@@ -73,7 +72,7 @@ var newStores = function(store) {
     }
   }
 };
-//here we will make an event from the form and pay attention to what they input
+//here we will take what the customer inputs in the form and put it into an array
 newStores(store);
 var form = document.getElementById('store_form');
 function formData(event){
@@ -86,10 +85,13 @@ function formData(event){
   var avgSales = parseInt(event.target.avg_sales.value);
   console.log(isNaN(avgSales));
 
+  //here I wanted to make sure that they input a number, if not, alert asking for one
   if ( isNaN(minimumCustomers) === true || isNaN(maximumCustomers) === true || isNaN(avgSales) === true){ //this one will make sure it is a number or give an alert asking for one
     alert('please insert a number');
     return;
   }
+
+  //
   var formStore = new Stores(storeName, minimumCustomers, maximumCustomers, avgSales);
   console.log(store);
   store.push(formStore);
