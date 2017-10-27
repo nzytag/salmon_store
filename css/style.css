@@ -1,0 +1,99 @@
+body {
+  color: #f48642;
+  background-color: #f7c888;
+  margin: 0 0 20px;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+ }
+
+.navbar {
+  overflow: hidden;
+  background-color: #f48642;
+  font-family: Arial;
+  display: flex;
+  min-height: 100px;
+  flex-direction: column;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: brown;
+}
+
+a {
+  color: #f48642;
+}
+
+h1 {
+  font-size: 55px;
+  font-family: caveat brush;
+  color: brown;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: caveat brush;
+  color: brown;
+}
+
+img {
+  bottom:0;
+  right:0;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+ul {
+  padding: 10px;
+  background: brown;
+}
+
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+article {
+  display: inline;
+  max-width: 500px;
+  margin: 10 auto;
+  padding: 0px 10px 0px 10px;
+}
+
+h1 {
+  font-size: 36px;
+  padding: 25px;
+}
+
+li {
+  padding: 5px;
+  display: block;
+}
+
+.store_form {
+  color; black;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.flex-container {
+  background-color: brown; {
+  float: right;
+  font-size: 16px;
+  color: brown;
+  text-align: center;
+  padding: 0 16px;
+  text-decoration: none;
+}
