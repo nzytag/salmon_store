@@ -27,11 +27,11 @@ Stores.prototype.cookiesSoldPerHour = function() {
 
 
 var store = [];
-var firstAndPike = new Stores('first and pike', 23, 65, 6.3);
-var seatacAirport = new Stores('seatac airport', 3, 24, 1.2);
-var seattleCenter = new Stores('seattle Center', 11, 38, 3.7);
-var capitolHill = new Stores('capitol hill', 20, 38, 2.3);
-var alki = new Stores('alki', 2, 16, 4.6);
+var firstAndPike = new Stores('First and Pike', 23, 65, 6.3);
+var seatacAirport = new Stores('Seatac airport', 3, 24, 1.2);
+var seattleCenter = new Stores('Seattle Center', 11, 38, 3.7);
+var capitolHill = new Stores('Capitol Hill', 20, 38, 2.3);
+var alki = new Stores('Alki', 2, 16, 4.6);
 
 
 

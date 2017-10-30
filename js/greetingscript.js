@@ -10,7 +10,7 @@ if (hourNow > 18) {
 } else if (hourNow > 12) {
   greeting = 'Good Afternoon! Welcome to Pat\'s Cookies!';
 } else if (hourNow > 0) {
-  greeting = 'Good Morning!, Welcome to Pat\'s Breakfast place!';
+  greeting = 'Good Morning! Welcome to Pat\'s Breakfast place!';
 } else {
   greeting = 'Welcome!';
 }

@@ -1,82 +1,91 @@
-body {
+  header {
+    text-align: center;
+    background: url('https://i.imgur.com/CMcPkon.png');
+    background-size: cover;
+    color: red;
+  }
+  a {
+    color: white;
+  }
+  h1 {
+    font-size: 55px;
+    font-family: caveat brush;
+    color: brown;
+    padding: 25px;
+  }
+  body {
   color: #f48642;
   background-color: #f7c888;
-  margin: 0 0 20px;
+  margin: 0 auto;
   display: flex;
   min-height: 100%;
   flex-direction: column;
- }
-
-a {
-  color: #f48642;
 }
-
-h1 {
-  font-size: 55px;
-  font-family: caveat brush;
-  color: brown;
-  padding: 25px;
-}
-
-h2 {
-  font-size: 30px;
-  font-family: caveat brush;
-  color: brown;
+p {
+  font-size: 18px;
+  color: black;
+  font-family: arial;
 }
 
 img {
-  bottom:0;
-  right:0;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
+  margin: 40px 0px 0px 0px;
+  border: 7px solid white;
+  border-radius: 20px;
 
+}
 ul {
   padding: 10px;
-  background: brown;
+  background: rgba(0,0,0,0.5);
 }
-
 li {
   display: inline;
-  padding: 0px 10px 0px 10px;
-  padding: 5px;
-  display: block;
-}
-
-article {
-  display: inline;
-  max-width: 500px;
-  margin: 10 auto;
   padding: 0px 10px 0px 10px;
 }
 
 .navbar {
-  overflow: hidden;
   background-color: #f48642;
-  font-family: Arial;
   display: flex;
-  min-height: 100px;
+  min-height: 10px;
   flex-direction: column;
 }
 
 .navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
+  float: center;
+  font-size:22px;
+  color: brown;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
 }
 
-.navbar a:hover {
-    background-color: brown;
+#store_form {
+padding-left: 300px;
+padding-bottom: 20px;
 }
+#students {
+  padding-left: 260px;
+  padding-top: 10px;}
 
-.flex-container {
-  background-color: brown; {
-  float: right;
-  font-size: 20px;
-  color: brown;
-  padding: 0 16px;
+article {
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 36px;
+      padding: 5px;
+    }
+    li {
+      padding: 5px;
+      display: block;
+    }
+  }
+.footer {
+text-align: center ;
+font-size: 18px ;
+font-family: caveat brush ;
+color: brown;
+width: auto ;
+height: 20px ;
+background-color: #f7c888 ;
 }
