@@ -3,53 +3,56 @@
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
-  <title>Welcome to Pat's cookies</title>
+
 </head>
 <body>
   <header>
-    <img src="images/chinook.jpg">
-    <h1>Welcome to Pat's Salmon Cookies</h1>
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="sales.html">Sales</a>
-      <a href="https://media.giphy.com/media/WCwFvyeb6WJna/giphy.gif">Free Cookies!!</a>
-</div>
+    <img src="images/fish.jpg" width="12%">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sales.html">Sales/Stores Page</a></li>
+      <li><a href="https://media.giphy.com/media/WCwFvyeb6WJna/giphy.gif">Free Cookies!!</a></li>
+    </ul>
   </header>
-    <section>
 
-    </section>
-      <body>
-        <form id="store_form">
+
+  <body>
+    <article>
+    <h1>Add a New Store:</h1>
+    </article>
+     <form id="store_form">
           <fieldset>
-            <label for="store_name">Store Name</label>
+            <label for="store_name"><p>
+
+            Store Name</p></label>
             <input type="text" name="store_name" placeholder="Enter Store Name" required>
           </fieldset>
           <fieldset for ="minimum_customers">
-            Minimum Customers:</label>
+            <p>Minimum Customers:</p></label>
             <input type="text" name="minimum_customers" placeholder="Min Customers" required>
           </fieldset>
           <fieldset for ="maximum_customers">
-            Maximum Customers:</label>
+            <p>Maximum Customers:</p></label>
             <input type="text" name="maximum_customers" placeholder="Max Customers" required>
           </fieldset><fieldset for ="avg_sales">
-            Avg Sales:</label>
+            <p>Avg Sales:</p></label>
             <input type="text" name="avg_sales" placeholder="Avg Sales" required>
           </fieldset>
-          <button id="submit_btn" type="submit">Add</button>
-      </form>
-
+          <button class="button"><span>Submit</span></button>
+</form>
+<article>
+<h1>Our Store Sales Today</h1>
+</article>
       <section id="students">
         <table>
-
-          <tbody id="student_table">
-
-
-        </main>
+        <tbody id="student_table">
         <table id='table_content'></table>
-        <div class="flex-container">
-        <footer>NotCopyrighted &copy; Pat's Cookies by Hector</footer>
-        </div>
 
-  <script src="script/app.js"></script>
+        <div class="footer">
+              Made by Hector for week 2 of Codefellows!
+          </div>
 
+  <script src="js/app.js"></script>
 </body>
+
+  </html>
